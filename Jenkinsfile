@@ -1,5 +1,5 @@
 pipeline {
-    agent { label'MAVEN_JDK8' }
+    agent { label 'MAVEN_JDK8' }
     stages {
         stage('vcs') {
             steps {
@@ -15,6 +15,7 @@ pipeline {
         stage ('post build') {
             steps {
                 archiveArtifacts artifacts: '**/target/gameoflife.war',
+                                         onlyIfSuccessful: true
                 junit testResults:'**/surefire-reports/TEST-*.xml'
             }
         }
