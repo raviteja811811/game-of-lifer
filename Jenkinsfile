@@ -4,7 +4,7 @@ pipeline {
         stage('vcs') {
             steps {
                 sh 'https://github.com/raviteja811811/game-of-lifer.git',
-                branch: 'master'
+                branch: 'try'
             }
         }
         stage ('build') {
