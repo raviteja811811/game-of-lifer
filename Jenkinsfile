@@ -9,11 +9,8 @@ pipeline {
             }
         }
         stage('package') {
-            environment {
-                sh 'PATH = "/usr/lib/jvm//java-1.8.0-openjdk-amd64/bin:$PATH"'
-            }
             steps {
-                sh 'mvn package'
+                sh 'PATH = "/usr/lib/jvm//java-1.8.0-openjdk-amd64/bin:$PATH" && mvn package'
             }
         }
         stage('post build') {
