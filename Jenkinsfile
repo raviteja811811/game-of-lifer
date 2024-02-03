@@ -9,8 +9,8 @@ pipeline {
             }
         }
         stage('package') {
-            tools {
-                jdk 'UBUNTU_JDK_8'
+            environment {
+                sh 'export PATH = "/usr/lib/jvm//java-1.8.0-openjdk-amd64/bin:$PATH" && mvn package '
             }
             steps {
                 sh 'mvn package'
