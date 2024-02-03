@@ -10,7 +10,7 @@ pipeline {
         }
         stage('package') {
             environment {
-                sh 'export PATH = "/usr/lib/jvm//java-1.8.0-openjdk-amd64/bin:$PATH" && mvn package '
+                sh 'export_PATH = "/usr/lib/jvm//java-1.8.0-openjdk-amd64/bin:$PATH" && mvn package '
             }
             steps {
                 sh 'mvn package'
