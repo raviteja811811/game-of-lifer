@@ -13,7 +13,7 @@ pipeline {
         }
         stage('package') {
             tools{
-                jdk 'jdk_17'
+                jdk 'jdk_11'
             }
             steps {
                 sh "mvn ${params.MAVEN_GOAL}"
